@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="c47a3266-27c2-4025-862f-8e3dc6c926ce">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="addressbook"/>
+      <table id="2" parent="1" name="addresses"/>
+      <table id="3" parent="1" name="emailaddresses"/>
+      <table id="4" parent="1" name="names"/>
+      <table id="5" parent="1" name="phonenumbers"/>
+      <column id="6" parent="2" name="addressID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="7" parent="2" name="personID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="8" parent="2" name="address1">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="9" parent="2" name="address2">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="10" parent="2" name="city">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="11" parent="2" name="county">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="12" parent="2" name="address3">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <key id="13" parent="2" name="PRIMARY">
+        <columns>addressID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="14" parent="2" name="fk_addresses">
+        <columns>personID</columns>
+        <ref-key>names.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="15" parent="3" name="emailID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="3" name="personID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="17" parent="3" name="emailAddress">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="18" parent="3" name="PRIMARY">
+        <columns>emailID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="19" parent="3" name="fk_emailAddresses">
+        <columns>personID</columns>
+        <ref-key>names.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="20" parent="4" name="personID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="4" name="firstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="22" parent="4" name="lastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <key id="23" parent="4" name="PRIMARY">
+        <columns>personID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="24" parent="5" name="phoneID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="25" parent="5" name="personID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="26" parent="5" name="phoneNumber">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <key id="27" parent="5" name="PRIMARY">
+        <columns>phoneID</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="28" parent="5" name="fk_phoneNumbers">
+        <columns>personID</columns>
+        <ref-key>names.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - survey@localhost" uuid="e2532f5d-c666-4be8-a695-79a2b8b06ad7">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="survey"/>
+      <table id="2" parent="1" name="names"/>
+      <table id="3" parent="1" name="surveyresult"/>
+      <column id="4" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="5" parent="2" name="FirstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="6" parent="2" name="LastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="7" parent="2" name="Address">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="8" parent="2" name="Emailaddress">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="9" parent="2" name="Phone">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="12" parent="3" name="surveyoption">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="13" parent="3" name="votes">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="14" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
